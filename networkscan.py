@@ -6,11 +6,9 @@ def get_args():
     parser.add_argument('-t', '--target', dest='target', help='Target IP Address/Adresses')
     options = parser.parse_args()
 
-    #Check for errors i.e if the user does not specify the target IP Address
-    #Quit the program if the argument is missing
-    #While quitting also display an error message
+    
     if not options.target:
-        #Code to handle if interface is not specified
+       
         parser.error("[-] Please specify an IP Address or Addresses, use --help for more info.")
     return options
   
@@ -30,7 +28,7 @@ def scan(ip):
     return result
   
 def display_result(result):
-    print("-----------------------------------\nIP Address\tMAC Address\n-----------------------------------")
+    print("\nIP Address\tMAC Address\n")
     for i in result:
         print("{}\t{}".format(i["ip"], i["mac"]))
   
